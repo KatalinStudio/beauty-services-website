@@ -1,0 +1,554 @@
+/* Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-dark: #0f1014;
+    --bg-light: #fdf9f7;
+    --accent: #d9a7b0;
+    --accent-dark: #b47a86;
+    --text-main: #2b2527;
+    --text-muted: #6f6467;
+    --white: #ffffff;
+    --max-width: 1100px;
+    --radius: 10px;
+    --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.12);
+    --transition: all 0.25s ease;
+    --font-heading: "Playfair Display", serif;
+    --font-body: "Poppins", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-main);
+    background: radial-gradient(circle at top left, #fbe9e7 0, #fdf9f7 40%, #f7f2f0 100%);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(15, 16, 20, 0.96);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 1.2rem 0 0.4rem;
+}
+
+.logo img {
+    height: 100px;
+}
+
+.logo h1 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+/* Nav */
+nav {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.6rem 0 0.9rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 1.6rem;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+nav a {
+    position: relative;
+    font-size: 0.85rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.78);
+    padding-bottom: 0.2rem;
+    transition: color 0.2s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+    transition: width 0.25s ease;
+}
+
+nav a:hover {
+    color: var(--white);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Sections */
+main section {
+    padding: 4rem 0;
+}
+
+/* Hero */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5rem 0 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.4rem, 4vw, 3.2rem);
+    color: #1f1719;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.hero p {
+    max-width: 520px;
+    font-size: 1.05rem;
+    color: var(--text-muted);
+}
+
+/* Hero Glow */
+.hero-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(217,167,176,0.35), transparent 70%);
+    top: -150px;
+    left: -150px;
+    filter: blur(40px);
+    z-index: -1;
+}
+
+/* Floating dots (optional texture image) */
+.floating-dots {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('soft-dots.png');
+    opacity: 0.25;
+    animation: float 18s infinite linear;
+    z-index: -1;
+}
+
+@keyframes float {
+    from { transform: translateY(0); }
+    to { transform: translateY(-80px); }
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.9rem 2.4rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    color: var(--white);
+    font-size: 0.95rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.18);
+}
+
+/* About */
+.about {
+    background: var(--bg-light);
+    border-radius: 40px;
+    box-shadow: var(--shadow-soft);
+    margin-top: 1rem;
+    padding: 3rem;
+}
+
+.about h2,
+#services h2 {
+    font-family: var(--font-heading);
+    font-size: 1.9rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #24191c;
+}
+
+.about p {
+    color: var(--text-muted);
+}
+
+/* Services Grid */
+.services-grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.services-grid h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(217, 167, 176, 0.25);
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 26px 50px rgba(0,0,0,0.12);
+}
+
+.service-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+    color: #2b1d21;
+}
+
+.service-card p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+/* Testimonials */
+.testimonials {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.testimonial-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(217, 167, 176, 0.25);
+}
+
+.testimonial-card p {
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 0.8rem;
+}
+
+.testimonial-card h4 {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+/* Pricing */
+.pricing {
+    margin-top: 4rem;
+    background: var(--bg-light);
+    padding: 3rem;
+    border-radius: 40px;
+    box-shadow: var(--shadow-soft);
+}
+
+.pricing h2 {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(217, 167, 176, 0.25);
+    font-size: 1.1rem;
+}
+
+.price-item:last-child {
+    border-bottom: none;
+}
+
+/* Gallery */
+.gallery {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: var(--shadow-soft);
+    object-fit: cover;
+}
+
+.subheading {
+    margin-top: 3rem;
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+}
+
+.before-after-grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.before-after {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.before-after img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: var(--shadow-soft);
+}
+
+/* FAQ */
+.faq {
+    margin-top: 4rem;
+}
+
+.faq h2 {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 1rem 1.2rem;
+    background: var(--white);
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.faq-answer {
+    display: none;
+    padding: 1rem 1.2rem;
+    background: var(--bg-light);
+    border-top: 1px solid rgba(217, 167, 176, 0.25);
+}
+
+/* CTA */
+.cta {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #fbe9e7, #f7f2f0);
+    border-radius: 40px;
+    margin-top: 4rem;
+    box-shadow: var(--shadow-soft);
+}
+
+.cta h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.cta p {
+    color: var(--text-muted);
+    margin-bottom: 1.6rem;
+}
+
+/* Booking */
+.booking {
+    margin-top: 4rem;
+    padding: 3rem;
+    background: var(--white);
+    border-radius: 40px;
+    box-shadow: var(--shadow-soft);
+}
+
+.booking h2 {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(217, 167, 176, 0.35);
+    font-size: 1rem;
+    background: #fff;
+}
+
+.booking-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.booking-form button {
+    align-self: center;
+    margin-top: 1rem;
+}
+
+/* Contact */
+.contact {
+    margin-top: 4rem;
+    padding: 3rem;
+    background: var(--white);
+    border-radius: 40px;
+    box-shadow: var(--shadow-soft);
+}
+
+.contact h2 {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(217, 167, 176, 0.35);
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.contact-form button {
+    align-self: center;
+    margin-top: 1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 0 2.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header .logo h1 {
+        font-size: 1.4rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+
+    .about,
+    .pricing,
+    .booking,
+    .contact {
+        padding: 2.4rem 1.8rem;
+        border-radius: 26px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}

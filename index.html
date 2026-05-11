@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beauty Services</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <img src="logo.png" alt="Beauty Services Logo" />
+        <h1>Beauty Services</h1>
+      </div>
+
+      <nav class="container">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#booking">Booking</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section id="home" class="hero">
+        <div class="hero-glow"></div>
+        <div class="floating-dots"></div>
+
+        <h2>Welcome to Beauty Services</h2>
+        <p>Your one-stop destination for all your beauty needs.</p>
+        <a href="#services" class="btn">Explore Services</a>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="container about">
+        <h2>About Us</h2>
+        <p>
+          We are a team of dedicated beauty professionals committed to providing
+          top-notch services to our clients. Our mission is to enhance your
+          natural beauty and boost your confidence through our wide range of
+          beauty treatments.
+        </p>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="services" class="container services-grid">
+        <h2>Our Services</h2>
+
+        <div class="service-card">
+          <h3>Hair Styling</h3>
+          <p>Professional haircuts, colouring, and styling tailored to you.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>Makeup Artistry</h3>
+          <p>Flawless makeup for events, photoshoots, and everyday glam.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>Skincare Treatments</h3>
+          <p>Rejuvenating facials and personalised skincare solutions.</p>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section id="testimonials" class="container testimonials">
+        <h2>What Our Clients Say</h2>
+
+        <div class="testimonial-card">
+          <p>
+            "Absolutely amazing service! I left feeling confident and beautiful.
+            Highly recommend!"
+          </p>
+          <h4>— Sarah M.</h4>
+        </div>
+
+        <div class="testimonial-card">
+          <p>
+            "Professional, friendly, and talented. My go-to beauty studio from
+            now on."
+          </p>
+          <h4>— Emily R.</h4>
+        </div>
+
+        <div class="testimonial-card">
+          <p>
+            "The skincare treatment was incredible. My skin has never looked
+            better."
+          </p>
+          <h4>— Jessica L.</h4>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <section id="pricing" class="container pricing">
+        <h2>Price List</h2>
+
+        <div class="price-item">
+          <span>Hair Styling</span>
+          <span>£45</span>
+        </div>
+
+        <div class="price-item">
+          <span>Makeup Application</span>
+          <span>£60</span>
+        </div>
+
+        <div class="price-item">
+          <span>Skincare Facial</span>
+          <span>£55</span>
+        </div>
+
+        <div class="price-item">
+          <span>Full Glam Package</span>
+          <span>£120</span>
+        </div>
+      </section>
+
+      <!-- GALLERY & BEFORE/AFTER -->
+      <section id="gallery" class="container gallery">
+        <h2>Gallery</h2>
+
+        <div class="gallery-grid">
+          <img src="Photos/image-1.png" alt="Beauty Work 1" />
+          <img src="Photos/image-2.png" alt="Beauty Work 2" />
+          <img src="Photos/image-3.png" alt="Beauty Work 3" />
+          <img src="Photos/image-4.png" alt="Beauty Work 4" />
+        </div>
+
+        <h3 class="subheading">Before &amp; After</h3>
+
+        <div class="before-after-grid">
+          <div class="before-after">
+            <img src="Photos/hairstyle-before-1.png" alt="Before 1" />
+            <img src="Photos/before-extension.png" alt="After 1" />
+          </div>
+
+          <div class="before-after">
+            <img src="Photos/hairstyle-after-1.png" alt="Before 2" />
+            <img src="Photos/after-extension.png" alt="After 2" />
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="container faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <button class="faq-question">How do I book an appointment?</button>
+          <div class="faq-answer">
+            <p>
+              You can book using our online booking form or by contacting us
+              directly.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What payment methods do you accept?
+          </button>
+          <div class="faq-answer">
+            <p>We accept cash, card, and online payments.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Do you offer patch tests?</button>
+          <div class="faq-answer">
+            <p>Yes, patch tests are required for certain treatments.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta container">
+        <h2>Enhance Your Natural Beauty</h2>
+        <p>Book your personalised beauty experience today.</p>
+        <a href="#booking" class="btn">Book Now</a>
+      </section>
+
+      <!-- BOOKING -->
+      <section id="booking" class="container booking">
+        <h2>Book an Appointment</h2>
+
+        <form class="booking-form">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Email Address" required />
+          <input type="tel" placeholder="Phone Number" required />
+
+          <select required>
+            <option value="">Select a Service</option>
+            <option>Hair Styling</option>
+            <option>Makeup Artistry</option>
+            <option>Skincare Treatment</option>
+          </select>
+
+          <textarea placeholder="Additional Notes"></textarea>
+
+          <button type="submit" class="btn">Submit Booking</button>
+        </form>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="container contact">
+        <h2>Contact Us</h2>
+
+        <form
+          class="contact-form"
+          action="https://formsubmit.co/your-email"
+          method="POST"
+        >
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+          ></textarea>
+
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Katalin Web Design Studio. All rights reserved.</p>
+    </footer>
+
+    <script>
+      const faqButtons = document.querySelectorAll(".faq-question");
+      faqButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          btn.classList.toggle("active");
+          const answer = btn.nextElementSibling;
+          answer.style.display =
+            answer.style.display === "block" ? "none" : "block";
+        });
+      });
+    </script>
+  </body>
+</html>
